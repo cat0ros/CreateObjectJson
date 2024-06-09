@@ -20,7 +20,7 @@ public class PlayerBuilder : IPlayerPack
 
     public void Unpack(PlayerData playerDataToWrite, PlayerObj playerObj)
     {
-         if (playerDataToWrite == null){
+        if (playerDataToWrite == null){
             throw new ArgumentNullException(nameof(playerDataToWrite));
          }
 
