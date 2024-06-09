@@ -29,4 +29,8 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector3.up * forceJump, ForceMode.Impulse);
         }
     }
+
+    public void Update(){
+        transform.localScale = new Vector3(playerData.WidthPlayer, playerData.HeightPlayer, transform.localScale.z);
+    }
 }
