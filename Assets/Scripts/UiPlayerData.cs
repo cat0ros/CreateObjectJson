@@ -15,4 +15,8 @@ public class UiPlayerData : MonoBehaviour
     {
         statusMass.text = playerData.MassPlayer.ToString();
     }
+
+    public void UpdateAllData(){
+        UpdateMassUi();
+    }
 }
