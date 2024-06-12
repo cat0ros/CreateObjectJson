@@ -22,6 +22,9 @@ public class UiPlayerData : MonoBehaviour
     [SerializeField]
     private TMP_Dropdown hatDropdown;
 
+    [SerializeField]
+    private TMP_InputField inputField;
+
     public void UpdateMassUi()
     {
         statusMass.text = playerData.MassPlayer.ToString();
@@ -34,11 +37,17 @@ public class UiPlayerData : MonoBehaviour
 
     public void UpdateDropdown(){
         hatDropdown.value = playerData.IndexHat;
+        hatVisualiser.SelectHat(playerData.IndexHat);
+    }
+
+    public void UpdateNameField(){
+        inputField.text = playerData.Name;
     }
 
     public void UpdateAllData(){
         UpdateMassUi();
         UpdateSize();
         UpdateDropdown();
+        UpdateNameField();
     }
 }

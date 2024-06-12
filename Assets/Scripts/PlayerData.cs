@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    private string namePlayer;
+
     private float massPlayer = 10f;
     private float heightPlayer = 1f;
     private float widthPlayer = 1f;
@@ -17,9 +19,6 @@ public class PlayerData : MonoBehaviour
     private const float widthMax = 3f;
 
     private int indexHat;
-
-    [SerializeField]
-    private HatVisualiser hatVisualiser;
 
     public float MassPlayer
     {
@@ -49,7 +48,17 @@ public class PlayerData : MonoBehaviour
             }
 
             indexHat = value;
-            hatVisualiser.SelectHat(indexHat);
+        }
+    }
+    
+    public string Name {
+        get => new string(namePlayer);
+        set {
+            if (string.IsNullOrEmpty(value)) {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            namePlayer = value;
         }
     }
 

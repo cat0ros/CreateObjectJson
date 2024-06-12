@@ -14,10 +14,10 @@ public class SavePlayer : MonoBehaviour
         
         var playerJson = JsonConvert.SerializeObject(player);
 
-        using (var fs = new FileStream(Application.persistentDataPath + "/" + fileName, FileMode.OpenOrCreate)){
+        using (var fs = new FileStream(Application.persistentDataPath + "/" + fileName, FileMode.Create, FileAccess.Write)){
             using (var sw = new StreamWriter(fs)) {
                 sw.Write(playerJson);
             }
         }
-    }
+    } 
 }

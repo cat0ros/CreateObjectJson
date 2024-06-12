@@ -10,6 +10,7 @@ public class PlayerBuilder : IPlayerPack
 
         var player = new PlayerObj
         {
+            Name = playerData.Name,
             Mass = playerData.MassPlayer,
             Height = playerData.HeightPlayer,
             Width = playerData.WidthPlayer,
@@ -29,6 +30,7 @@ public class PlayerBuilder : IPlayerPack
             throw new ArgumentNullException(nameof(playerObj));
          }
 
+         playerDataToWrite.Name = playerObj.Name;
          playerDataToWrite.MassPlayer = playerObj.Mass;
          playerDataToWrite.HeightPlayer = playerObj.Height;
          playerDataToWrite.WidthPlayer = playerObj.Width;

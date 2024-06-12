@@ -35,7 +35,7 @@ public class HatVisualiser : MonoBehaviour {
         }
 
         currentHat = hats[index];
-        
+        playerData.IndexHat = index;
         for (int i = 0; i < hats.Count; i++){
             if (i == index){
                 hats[i].gameObject.SetActive(true);
