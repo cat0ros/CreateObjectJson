@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private PlayerData playerData;
 
+    [SerializeField]
+    private HatVisualiser hatVisualiser;
+
     private Rigidbody rb;
 
     private const float forceJump = 70f;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +8,9 @@ public class UiPlayerData : MonoBehaviour
     private PlayerData playerData;
 
     [SerializeField]
+    private HatVisualiser hatVisualiser;
+
+    [SerializeField]
     private TextMeshProUGUI statusMass;
 
     [SerializeField]
@@ -17,6 +18,9 @@ public class UiPlayerData : MonoBehaviour
 
     [SerializeField]
     private Slider widthSlider;
+
+    [SerializeField]
+    private TMP_Dropdown hatDropdown;
 
     public void UpdateMassUi()
     {
@@ -28,8 +32,13 @@ public class UiPlayerData : MonoBehaviour
         widthSlider.value = playerData.WidthPlayer;
     }
 
+    public void UpdateDropdown(){
+        hatDropdown.value = playerData.IndexHat;
+    }
+
     public void UpdateAllData(){
         UpdateMassUi();
         UpdateSize();
+        UpdateDropdown();
     }
 }

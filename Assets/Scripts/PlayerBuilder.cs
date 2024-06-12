@@ -12,7 +12,8 @@ public class PlayerBuilder : IPlayerPack
         {
             Mass = playerData.MassPlayer,
             Height = playerData.HeightPlayer,
-            Width = playerData.WidthPlayer
+            Width = playerData.WidthPlayer,
+            IndexHat = playerData.IndexHat
         };
         
         return player;
@@ -31,5 +32,6 @@ public class PlayerBuilder : IPlayerPack
          playerDataToWrite.MassPlayer = playerObj.Mass;
          playerDataToWrite.HeightPlayer = playerObj.Height;
          playerDataToWrite.WidthPlayer = playerObj.Width;
+         playerDataToWrite.IndexHat = playerObj.IndexHat;
     }
 }

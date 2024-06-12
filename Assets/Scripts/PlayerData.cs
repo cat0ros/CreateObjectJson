@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour
@@ -15,6 +16,10 @@ public class PlayerData : MonoBehaviour
     private const float widthMin = 1f;
     private const float widthMax = 3f;
 
+    private int indexHat;
+
+    [SerializeField]
+    private HatVisualiser hatVisualiser;
 
     public float MassPlayer
     {
@@ -33,6 +38,18 @@ public class PlayerData : MonoBehaviour
         get => widthPlayer;
         set {
             widthPlayer = Mathf.Clamp(value, widthMin, widthMax);
+        }
+    }
+
+    public int IndexHat {
+        get => indexHat;
+        set {
+            if (value < 0){
+                throw new ArgumentOutOfRangeException(nameof(value));
+            }
+
+            indexHat = value;
+            hatVisualiser.SelectHat(indexHat);
         }
     }
 
